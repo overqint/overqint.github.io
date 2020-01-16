@@ -1,7 +1,5 @@
-<div id="sidebar">
-  <header>
-    <center>
-      <img src="profile.jpg"></center>
+<aside id="sidebar" class="sidebar_left">
+    <img src="{{'/assets/images/profile.jpg' | relative_url }}" class="author">
     <{% if page.layout == "index" %}h1{% else %}div{% endif %} class="site-title">
       <a href="{{ "/" | relative_url }}">
         {% unless page.url == "/" %}
@@ -11,13 +9,15 @@
       </a>
     </{% if page.layout == "index" %}h1{% else %}div{% endif %}>
     <p class="lead">{{ site.description }}</p>
-  </header>
   {% include sidebar-nav-links.html %}
 
   {% if site.version %}
     <span class="site-version">Currently v{{ site.version }}</span>
   {% endif %}
-
+  <a href="{{site.orcid}}">
+    <img src="{{'/assets/images/orcid.png' | relative_url}}" class="orcid" alt="orcid">
+  </a>
+  <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
   {% include sidebar-icon-links.html %}
   {% include copyright.html %}
-</div>
+</aside>

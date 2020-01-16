@@ -1,34 +1,10 @@
-/*
-  Layout
-
-  Styles for managing the structural hierarchy of the site.
-  Hydeout features the large colored sidebar from Hyde that houses the
-  site name, intro, and "footer" content. Sidebar is on top of content on
-  mobile and expands into sidebar on larger width displays.
-
-  Sidebar CSS assumes HTML looks like this for post pages:
-
-    body
-    > #sidebar
-      > header (primary sidebar content -- i.e. title)
-        > h1 (home page only, otherwise div or span)
-      > secondary nav content we may want to hide on certain pages
-    > .container
-      > h1 (non-home page)
-      > .content
-
-  Basic approach is to color in body, make sidebar background transparent,
-  and then fill in the .container or .content elements depending on how far
-  we want the sidebar or header to stretch.
-*/
-
 body {
   color: $sidebar-text-color;
-  background-color: $sidebar-bg-color;
-  background-image: linear-gradient(
-    to bottom,
-    lighten($sidebar-bg-color, 7%),
-    darken($sidebar-bg-color, 7%));
+  background-color: $body-bg;
+//  background-image: linear-gradient(
+//    to bottom,
+//    lighten($sidebar-bg-color, 7%),
+//    darken($sidebar-bg-color, 7%));
   display: flex;
   flex-direction: column;
   min-width: 100vw;
@@ -36,7 +12,7 @@ body {
 }
 
 #sidebar {
-  flex: 0 0 auto;
+ // flex: 0 0 auto;
   padding: $section-spacing;
 
   .site-title {
@@ -51,16 +27,16 @@ body {
 }
 
 // Container is flexbox as well -- we want content div to stretch and fill
-.container {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-
-  > .content {
-    flex-grow: 1;
-    padding-bottom: $section-spacing * 2;
-  }
-}
+//.container {
+//  flex: 1 1 auto;
+//  display: flex;
+//  flex-direction: column;
+//
+//  > .content {
+//    flex-grow: 1;
+//    padding-bottom: $section-spacing * 2;
+//  }
+//}
 
 .content {
   background: $body-bg;
@@ -108,11 +84,6 @@ body {
   // Center sidebar content
   text-align: center;
 
-  // Bigger title
-  .site-title {
-    font-size: 3.25rem;
-  }
-
   // Show secondary nav content + lead
   header ~ *, p.lead {
     display: block;
@@ -143,7 +114,7 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     > * {
-      max-height: 100vh; 
+      height: 100vh; 
       overflow-y: auto; 
       -webkit-overflow-scrolling: touch;
     }
@@ -152,7 +123,6 @@ body {
   /* Undo mobile CSS */
 
   #sidebar, .home #sidebar {
-    width: $sidebar-width;
     text-align: left;
 
     > *:last-child {
@@ -162,7 +132,7 @@ body {
 
   #sidebar {
     .site-title {
-      font-size: 3.25rem;
+      font-size: 33px;
       .back-arrow { display: none; }
     }
 
@@ -178,31 +148,32 @@ body {
   .index #sidebar { margin-bottom: 0; }
 
   // Make entire container background white to contrast against sidebar
-  .container {
-    background: $body-bg;
-    color: $body-color;
-    padding: $section-spacing * 2
-             $section-spacing * 2
-             0;
-    height: 100vh;
-
-    > header {
-      color: $heading-color;
-      margin: 0;
-      h1, h2 {
-        color: inherit;
-
-        &:last-child {
-          margin-bottom: $heading-spacing;
-        }
-      }
-    }
-
-    > * {
-      max-width: 38rem;
-      padding: 0;
-    }
-  }
+//  .container {
+//    background: $body-bg;
+//    color: $body-color;
+//    //padding: $section-spacing * 2
+//    //         $section-spacing * 2
+//    //         0;
+//    padding: 3rem 10% 0;
+//    height: 100vh;
+//
+//    > header {
+//      color: $heading-color;
+//      margin: 0;
+//      h1, h2 {
+//        color: inherit;
+//
+//        &:last-child {
+//          margin-bottom: $heading-spacing;
+//        }
+//      }
+//    }
+//
+//    > * {
+//     // max-width: 38rem;
+//      padding: 0;
+//    }
+//  }
 }
 
 

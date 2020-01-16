@@ -1,0 +1,48 @@
+---
+layout: page
+title: Publications
+sidebar_link: true
+---
+
+        {% assign publications = site.data.publications %}
+        {% for item in publications %}
+        <div class="row publication">
+
+          <div class="column left badge">
+            {% if item.doi %}
+              <span class="__dimensions_badge_embed__"   
+                    data-doi="{{item.doi}}"   
+                    data-style="large_rectangle">
+              </span>
+              <div data-badge-popover="right" 
+                   data-badge-type="donut" 
+                   data-doi="{{item.doi}}"
+                   data-hide-no-mentions="false"
+                   class="altmetric-embed">
+              </div>
+              {% endif %}
+              <div class="column right">
+                <p>{{item.year}}</p>
+              </div>
+          </div>
+
+          <div class="column middle">
+            <p>
+              Authors: <b>{{item.authors}}</b><br>
+              Title: <strong>{{item.title}}</strong><br>
+              <b>in: </b> {{item.in}}<br>
+              {{item.published}}
+              <br>
+            {% if item.doi %}
+              <a href="http://dx.doi.org/{{item.doi}}">http://dx.doi.org/{{item.doi}}</a>
+            {% endif %}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+        
+        <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+        
+        
