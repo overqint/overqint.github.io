@@ -3,20 +3,23 @@
 // Each post is wrapped in `.post` and is used on default and post layouts. Each
 // page is wrapped in `.page` and is only used on the page layout.
 
-article + *, .post-body ~ section {
+article + *,
+.post-body ~ section {
   padding-top: $section-spacing;
   border-top: 1px solid $border-color;
   margin-top: $section-spacing;
 
-  > h2:first-child, > h3:first-child {
+  > h2:first-child,
+  > h3:first-child {
     margin-top: 0;
   }
 }
 
-.post, .page {
+.post,
+.page {
   .content {
     li + li {
-      margin-top: .25rem;
+      margin-top: 0.25rem;
     }
   }
 }
@@ -29,18 +32,26 @@ article + *, .post-body ~ section {
 }
 .page-title,
 .post-title {
-  margin-top: 0;
   margin-top: 40px;
 }
 
+.page-title.landingp {
+  padding-left: 20px;
+}
+
 // h1-size h2
-h2.post-title, h2.page-title {
+h2.post-title,
+h2.page-title {
   font-size: 2rem;
+}
+
+h2.landingph2 {
+  margin-top: 2rem;
 }
 
 // Meta data line below post title
 .post-meta {
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   margin-bottom: 1rem;
   color: $body-muted;
 }
@@ -48,8 +59,10 @@ h2.post-title, h2.page-title {
 .post-tags a {
   font-size: 0.8em;
   margin-right: 0.5rem;
-  white-space:nowrap;
-  .tag-name { text-transform: capitalize; }
+  white-space: nowrap;
+  .tag-name {
+    text-transform: capitalize;
+  }
 
   opacity: 0.75;
   &:hover {

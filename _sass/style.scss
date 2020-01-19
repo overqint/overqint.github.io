@@ -14,6 +14,7 @@
   background: $sidebar-bg-color;
   .author {
     margin: 50px auto;
+    margin-left: 45px;
   }
   .page_link {
     display: inline-block;
@@ -105,10 +106,10 @@
 }
 @media (max-width: 991px) {
   .publication {
-  p {
-    margin: 5px;
+    p {
+      margin: 5px;
+    }
   }
-}
   .badge {
     display: flex;
     flex-wrap: wrap;
