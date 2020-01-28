@@ -27,6 +27,10 @@ body {
       margin-right: 0.5rem;
     }
   }
+
+  h1 {
+    padding-left: 0;
+  }
 }
 
 // Container is flexbox as well -- we want content div to stretch and fill
